@@ -1,3 +1,6 @@
 #排除掉VSCode自己产生的目录
 build/
 .cache/
+
+#排除cmake产生的bin可执行文件目录
+bin/
