@@ -4,7 +4,7 @@
         {
             "name": "vcpkg",
             "displayName": "VCPKG",
-            "description": "设置 Ninja 生成器、版本和安装目录",
+            "description": "这是vcpkg工具链",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {

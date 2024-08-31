@@ -1,3 +1,3 @@
-#排除掉VSCode自己产生的没有必要的目录
+#排除掉VSCode自己产生的目录
 build/
 .cache/
