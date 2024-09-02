@@ -1,3 +1,6 @@
+#ifndef USERS_HPP_
+#define USERS_HPP_
+
 #include <string>
 
 namespace QMR {
@@ -10,3 +13,5 @@ namespace QMR {
     };
 
 } // namespace QMR
+
+#endif
