@@ -10,11 +10,12 @@ namespace QMR
 class Dao
 {
 private:
-    std::string dbObjectName;
     sqlite3 * database;
+    std::string dbObjectName;
 public:
     explicit Dao(const std::string & dbName);
     ~Dao();
+    void CreateUsersTable();
 };
 
 } // namespace QMR

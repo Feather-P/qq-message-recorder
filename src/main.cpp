@@ -2,8 +2,9 @@
 #include <string>
 
 int main(){
-    
-    const std::string databaseName = "testdb.db";
+
+    const std::string databaseName = "file:database/qq-message-recorder.db";
 
     QMR::Dao Dao(databaseName);
+    Dao.CreateUsersTable();
 }
