@@ -37,8 +37,6 @@ public:
     ~Dao();
     void CreateTable(const CreateTableDefination & tableDefination);
     void InitializeTables();
-    void CreateUsersTable();//WANT TO DELETE
-    void CreateMessagesTable();//WANT TO DELETE
 };
 
 } // namespace QMR
