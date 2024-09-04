@@ -7,6 +7,26 @@
 namespace QMR
 {
 
+class BaseTableDefination
+{
+private:
+    std::string tableName;
+
+public:
+    std::string getTableName() const;
+    void setTableName(const std::string & expectedTableName);
+};
+
+class CreateTableDefination : public BaseTableDefination
+{
+private:
+    std::string sql;
+
+public:
+    std::string getSql() const;
+    void setSql(const std::string & expectedSql);
+};
+
 class Dao
 {
 private:
@@ -15,7 +35,10 @@ private:
 public:
     explicit Dao(const std::string & dbName);
     ~Dao();
-    void CreateUsersTable();
+    void CreateTable(const CreateTableDefination & tableDefination);
+    void InitializeTables();
+    void CreateUsersTable();//WANT TO DELETE
+    void CreateMessagesTable();//WANT TO DELETE
 };
 
 } // namespace QMR

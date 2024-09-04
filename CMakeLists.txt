@@ -9,7 +9,8 @@ file (GLOB SRC_FILES
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
     "${PROJECT_SOURCE_DIR}/src/models/*.cpp"
     "${PROJECT_SOURCE_DIR}/src/models/DataAccessModule/*.cpp"
-    "${PROJECT_SOURCE_DIR}/src/models/Users/*.cpp")
+    "${PROJECT_SOURCE_DIR}/src/models/Users/*.cpp"
+    )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)#定义可执行文件输出目录
 add_executable(${CMAKE_PROJECT_NAME} ${SRC_FILES})#生成可执行文件
