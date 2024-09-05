@@ -13,6 +13,5 @@ int main(){
     else {
         QMR::Dao Dao(URIdatabaseName);
     }
-    /*Initialize the DataAccessObject, if it is brand new one, create tables*/
     
 }
