@@ -2,9 +2,15 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <unistd.h>
 
 namespace QMR
-{
+{   
+    /*BEGIN OF [is-SOMETHING] FUNCTIONS*/
+    bool isFileExist(const std::string & fileDir)
+    {
+        return access(fileDir.c_str(), F_OK) != -1;
+    }
     /*BEGIN OF SOMETHING ABOUT TABLES*/
     std::string BaseTableDefination::getTableName() const
     {
@@ -92,6 +98,16 @@ namespace QMR
         UsersTableDefinations.setTableName(userTableName);
         UsersTableDefinations.setSql(userCreateSql);
 
+        CreateTableDefination GroupsTableDefinations;
+        const std::string groupsTableName = "GROUPS";
+        const std::string groupsCreateSql =
+        "CREATE TABLE GROUPS(\
+            GROUPID     INT     PRIMARY KEY    NOT NULL,\
+            MEMBERQID   TEXT\
+        );";
+        GroupsTableDefinations.setTableName(groupsTableName);
+        GroupsTableDefinations.setSql(groupsCreateSql);
+
         CreateTableDefination MessagesTableDefinations;
         const std::string messagesTableName = "MESSAGES";
         const std::string messagesCreateSql =
@@ -104,8 +120,33 @@ namespace QMR
         MessagesTableDefinations.setTableName(messagesTableName);
         MessagesTableDefinations.setSql(messagesCreateSql);
 
+        CreateTableDefination GroupMessagesTableDefinations;
+        const std::string groupMessagesTableName = "GROUPMESSAGES";
+        const std::string groupMessagesCreateSql =
+        "CREATE TABLE GROUPMESSAGES(\
+            MID       INT PRIMARY KEY NOT NULL,\
+            GROUPID   TEXT NOT NULL\
+        );";
+        GroupMessagesTableDefinations.setTableName(groupMessagesTableName);
+        GroupMessagesTableDefinations.setSql(groupMessagesCreateSql);
+
+        CreateTableDefination PrivateMessagesTableDefinations;
+        const std::string privateMessagesTableName = "PRIVATEMESSAGES";
+        const std::string privateMessagesCreateSql =
+        "CREATE TABLE PRIVATEMESSAGES(\
+            MID          INT    PRIMARY KEY    NOT NULL,\
+            CONTACTQID   TEXT                  NOT NULL\
+        );";
+        PrivateMessagesTableDefinations.setTableName(privateMessagesTableName);
+        PrivateMessagesTableDefinations.setSql(privateMessagesCreateSql);
+
+
         CreateTable(UsersTableDefinations);
+        CreateTable(GroupsTableDefinations);
         CreateTable(MessagesTableDefinations);
+        CreateTable(GroupMessagesTableDefinations);
+        CreateTable(PrivateMessagesTableDefinations);
+
     }
     /*END OF DEFINE OF DAO*/
 

@@ -6,6 +6,7 @@
 
 namespace QMR
 {
+bool isFileExist(const std::string & fileDir);
 
 class BaseTableDefination
 {
@@ -38,7 +39,6 @@ public:
     void CreateTable(const CreateTableDefination & tableDefination);
     void InitializeTables();
 };
-
 } // namespace QMR
 
 #endif
